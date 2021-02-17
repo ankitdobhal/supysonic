@@ -228,7 +228,7 @@ class ScannerProcessingQueue(Thread):
 
     def unschedule_paths(self, basepath):
         with self.__cond:
-            for path in self.__queue.keys():
+            for path in self.__queue:
                 if path.startswith(basepath):
                     del self.__queue[path]
 
